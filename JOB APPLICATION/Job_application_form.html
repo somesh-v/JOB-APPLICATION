@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Application Form</title>
+    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .form-container {
+            background-color: #e0f7fa;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        .btn-apply {
+            background-color: #4caf50;
+            color: white;
+        }
+        .btn-apply:hover {
+            background-color: #45a049;
+        }
+        .btn-clear {
+            background-color: #f44336;
+            color: white;
+        }
+        .btn-clear:hover {
+            background-color: #e53935;
+        }
+        .btn-update {
+            background-color: #ff9800;
+            color: white;
+        }
+        .btn-update:hover {
+            background-color: #fb8c00;
+        }
+        .btn-report {
+            background-color: #2196f3;
+            color: white;
+        }
+        .btn-report:hover {
+            background-color: #1e88e5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">JOB APPLICATION</h1>
+        <form id="form" method="post" class="form-container">
+            <div class="form-group">
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="coverletter">Cover Letter:</label>
+                <textarea id="coverletter" name="coverletter" class="form-control" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="position">Position Applying For:</label>
+                <input type="text" id="position" name="position" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Education Level:</label><br>
+                <select id="education" name="education" class="form-control">
+                    <option value="select">Select Education Level</option>
+                    <option value="High School">High School</option>
+                    <option value="Bachelor's Degree">Bachelor's Degree</option>
+                    <option value="Master's Degree">Master's Degree</option>
+                    <option value="PhD">PhD</option>
+                </select>
+            </div>
+            <button type="button" onclick="set('/apply', event)" class="btn btn-apply">Apply</button>
+            <button type="button" onclick="set('/update', event)" class="btn btn-update">Update</button>
+            <button type="button" onclick="set('/applications', event)" class="btn btn-report">Applications</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function set(path, event) {
+            event.preventDefault(); // Prevent default form submission behavior
+            document.getElementById('form').action = 'http://localhost:3000' + path; // Replace with actual backend URL
+            document.getElementById('form').submit(); // Submit the form after setting the action
+        }
+    </script>
+</body>
+</html>

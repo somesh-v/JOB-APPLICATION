@@ -1,0 +1,17 @@
+<html>
+<body>
+<table border ="2">
+<tr>
+<td>Name:</td>
+<td>AAA</td>
+</tr>
+<tr>
+<td>Email</td>
+<td>aaa@gmail.com</td>
+</tr>
+<tr>
+<td rowspan="2">Phone</td>
+<td>0427</td>
+<td>220000</td>
+</tr>
+
